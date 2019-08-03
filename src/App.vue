@@ -1,28 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <PageHeader></PageHeader>
+    <div class="page-header-height"></div>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
+    <!-- 播放器 -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import PageHeader from 'components/page-header/PageHeader'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    PageHeader,
   }
 }
 </script>
+<style lang="scss" scoped>
+  @import './common/sass/base.scss';
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .page-header-height{
+    height:72*$length;
+    width:100%;
+  }
 </style>
