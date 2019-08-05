@@ -2,20 +2,27 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 // 导入组件
-import Rank from '../screen/home/index'
+import Test from '../screen/test'
+import Home from '../screen/home/index'
+import Class from '../screen/class/class'
 
 Vue.use(VueRouter)
 
 const router = new VueRouter({
   linkActiveClass: 'tab-item-active',
   routes: [
-    {
-      path: '/',
-      redirect: '/rank'
-    },
+
     {
       path: '/rank',
-      component: Rank
+      component: Test
+    },
+    {
+      path: '/class',
+      component: Class
+    },
+    {
+      path: '/',
+      component: Home
     }
   ]
 })

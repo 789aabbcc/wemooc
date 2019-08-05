@@ -24,15 +24,13 @@ $font-sizeM:1px;
 /*定制颜色  start*/
 $fontColor1:rgba(70,83,155,1);
 $hoverColor1:rgba(70,83,155,.4);
-$fontColor2:rgba(255,255,255,1);
-$hoverColor2:rgba(221,197,146,.1);
-$hoverColor3:rgba(221,197,146,.4);
+$hoverColor2:rgba(70,83,155,.1);
 /*定制颜色  end*/
 
 
 /*定制页面  start*/
 $pageWidth:1200*$length;
-$bgColor:#272427;
+$bgColor:#FEFEFE;
 $bgColor2:rgba(71,132,182,1);
 /*定制页面  end*/
 
@@ -346,6 +344,8 @@ textarea{
 }
 
 html,body{
+  margin:0;
+  padding:0;
   height:100%;
   width:100%;
   background-color:$bgColor;
@@ -478,227 +478,12 @@ u {
 /* 引入icon end */
 
 
+
 //----------------------------------其他公共样式--------------------------------------//
 
 
 //其他公共样式
 
 
-/* page-header start*/
-
-.page-header-h{
-  height:$pageHeaderH;
-}
-.page-header-hM{
-  height:$pageHeaderHM;
-}
-.page-header{
-  position:fixed;
-  height:$pageHeaderH;
-  width:100%;
-  background-color:$pageHeaderBgC;
-  z-index: $index4;
-  border-bottom: $pageHeaderBLine;
-  .page-header-nav{
-    margin:0 auto;
-    width:$pageWidth;
-    height:100%;
-    .page-header-title{
-      @extend %page-header-nav-title;
-
-    }
-    .page-header-nav-list{
-      @include horizontalCenterA($pageHeaderNavListW);
-        & li{
-          display:block;
-        position:relative;
-        float:left;
-        height:$pageHeaderH;
-        width:$pageHeaderNavListItemL;
-          cursor:pointer;
-            @extend %inlineBlockV;
-          @extend %clearFix;
-        & a{
-          width:$pageHeaderNavListItemAW;
-          display: inline-block;
-          height:$pageHeaderNavListItemAH;
-          vertical-align: middle;
-          border-bottom:1px solid transparent;
-          color:$pageHeaderNavListItemC;
-          font-size:14px;
-          font-weight: 500;
-          text-align: center;
-        }
-        &:hover{
-          & a{
-            border-bottom:1px solid $pageHeaderNavListItemCH;
-            color:$pageHeaderNavListItemCH;
-          }
-        }
-
-      }
-    }
-    .page-header-end{
-      @include verticalMiddleA($pageHeaderEndH);
-      right:0;
-      line-height:$pageHeaderEndH*$length ;
-      width:$pageHeaderEndW;
-      text-align:center;
-      color:$hoverColor1;
-      border:1px solid $hoverColor2;
-      border-radius:5*$length;
-      cursor:pointer;
-      background-color: transparent;
-      &:hover{
-        background-color: $hoverColor3;
-        color:rgba(255,255,255,.4);
-      }
-    }
-  }
-}
-.page-header2{
-  position:fixed;
-  height:$pageHeaderH;
-  width:100%;
-  background-color:$bgColor;
-  z-index: $index4;
-  border-bottom: $pageHeaderBLine;
-  .page-header-nav{
-    margin:0 auto;
-    width:$pageWidth;
-    height:100%;
-    .page-header-title{
-      @extend %page-header-nav-title;
-
-    }
-    .page-header-nav-list{
-      @include horizontalCenterA($pageHeaderNavListW);
-      & li{
-        display:block;
-        position:relative;
-        float:left;
-        height:$pageHeaderH;
-        width:$pageHeaderNavListItemL;
-        cursor:pointer;
-        @extend %inlineBlockV;
-        @extend %clearFix;
-        & a{
-          width:$pageHeaderNavListItemAW;
-          display: inline-block;
-          height:$pageHeaderNavListItemAH;
-          vertical-align: middle;
-          border-bottom:1px solid transparent;
-          color:$pageHeaderNavListItemC;
-          font-size:14px;
-          font-weight: 500;
-          text-align: center;
-        }
-        &:hover{
-          & a{
-            border-bottom:1px solid $pageHeaderNavListItemCH;
-            color:$pageHeaderNavListItemCH;
-          }
-        }
-
-      }
-    }
-    .page-header-end{
-      @include verticalMiddleA($pageHeaderEndH);
-      right:0;
-      line-height:$pageHeaderEndH*$length ;
-      width:$pageHeaderEndW;
-      text-align:center;
-      color:$hoverColor1;
-      border:1px solid $hoverColor2;
-      border-radius:5*$length;
-      cursor:pointer;
-      background-color: transparent;
-      &:hover{
-        background-color: $hoverColor3;
-        color:rgba(255,255,255,.4);
-      }
-    }
-  }
-}
-.page-headerM{
-  position:fixed;
-  height:$pageHeaderHM;
-  width:100%;
-  background-color:$bgColor;
-  z-index: $index4;
-  border-bottom: $pageHeaderBLine;
-  .page-headerM-title{
-    @extend %page-header-nav-titleM;
-
-  }
-  .page-headerM-center{
-    position:absolute;
-    left:0;
-    right:0;
-    margin:0 auto;
-    width:40%;
-    height:$pageHeaderH;
-    line-height:$pageHeaderH;
-    font-size:24*$font-sizeM;
-    color:$hoverColor1;
-    font-weight: 500;
-    text-align:center;
-  }
-  .page-header-rightM{
-    float:right;
-    width:$MenuWidthM;
-    margin-right:$logoLeftM;
-    height:$pageHeaderHM;
-    background-position: 100% 50%;
-    cursor:pointer;
-    background-repeat: no-repeat;
-    background-size:$MenuWidthM $MenuHeightM;
-    //background-image: url($MenuImg);
-    @extend %clearFix;
-  }
-}
-
-
-@media screen and (min-width: 230*$length ) and (max-width: 1200*$length){
-   .page-header{
-      display: none;
-    }
-  .page-header2{
-    display: none;
-  }
-  .page-header-h{
-    display: none;
-  }
-
-
-  .page-headerM{
-    display: block;
-  }
-  .page-header-hM{
-    display: block;
-  }
-}
-
-
-@media screen and (min-width: 1200*$length ){
-  .page-header{
-    display: block;
-  }
-  .page-header2{
-    display: block;
-  }
-  .page-header-h{
-    display: block;
-  }
-
-
-  .page-headerM{
-    display: none;
-  }
-  .page-header-hM{
-    display: none;
-  }
-}
-/* page-header end*/
 
 

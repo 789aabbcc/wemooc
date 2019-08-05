@@ -9,6 +9,7 @@ module.exports = {
       .set('common', resolve('src/common'))
       .set('components', resolve('src/components'))
       .set('base', resolve('src/base'))
+      .set('screen', resolve('src/screen'))
   },
   devServer: {
     before(app) {
