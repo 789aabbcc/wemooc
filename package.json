@@ -12,10 +12,18 @@
     "better-scroll": "^1.15.1",
     "create-keyframe-animation": "^0.1.0",
     "element-ui": "^2.11.1",
+    "fastclick": "^1.0.6",
+    "iview": "^3.4.2",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "nprogress": "^0.2.0",
     "swiper": "^4.5.0",
     "vue": "^2.6.6",
+    "vue-dplayer": "0.0.10",
     "vue-lazyload": "^1.2.6",
     "vue-router": "^3.0.2",
+    "vue-video-player": "^5.0.2",
+    "vueg": "^1.4.5",
     "vuex": "^3.1.0"
   },
   "devDependencies": {
@@ -26,10 +34,12 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.12.0",
     "sass": "^1.17.3",
     "sass-loader": "^7.1.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.5.21"
   },
   "eslintConfig": {
