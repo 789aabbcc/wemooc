@@ -1,4 +1,4 @@
-const KEY = 'webchat_app';
+const KEY = 'weMooc';
 const localStorage = window.localStorage;
 let storeStorage;
 

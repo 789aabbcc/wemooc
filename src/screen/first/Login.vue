@@ -52,6 +52,7 @@ export default {
     margin-left: auto;
     margin-right: auto;
     background-color: #ffffff;
+    @include box-shadow(1px 1px 10px 1px rgba(34,34,34,.1));
   }
   .login-title {
     text-align: center;
@@ -68,6 +69,8 @@ export default {
     color: $noshowColor;
     box-sizing: border-box;
     padding: 0 10px;
+
+
   }
   #login form button {
     display: block;

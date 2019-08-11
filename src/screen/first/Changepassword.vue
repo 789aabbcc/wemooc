@@ -53,6 +53,7 @@ export default {
         height: 420px;
         margin: 0 auto;
         background-color: #ffffff;
+        @include box-shadow(1px 1px 10px 1px rgba(34,34,34,.1));
     }
     .changepassword-title {
         font-size: $f16;

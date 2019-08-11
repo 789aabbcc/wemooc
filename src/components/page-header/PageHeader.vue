@@ -3,7 +3,7 @@
         <div class="header-center">
             <div class="left">
                 <div class="logo"></div>
-                <h1 class="wordL">微慕课</h1>
+                <router-link tag="h1" class="wordL" to="/">微慕课</router-link>
                 <ul>
                     <router-link tag="li" exact-active-class="activeClass" to="/">首页</router-link>
                     <router-link tag="li" exact-active-class="activeClass" to="/class/free">免费课程</router-link>
@@ -13,9 +13,10 @@
             </div>
             <div class="right">
                 <div class="login">
-                    <span>登录</span>
+                    <router-link tag="span"  to="/login">登录</router-link>
                     <p></p>
-                    <span>注册</span>
+                    <router-link tag="span"  to="/register">注册</router-link>
+
                 </div>
                 <div class="search">
                     <input
