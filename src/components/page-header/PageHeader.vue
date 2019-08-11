@@ -5,9 +5,10 @@
                 <div class="logo"></div>
                 <h1 class="wordL">微慕课</h1>
                 <ul>
-                    <li>首页</li>
-                    <li>免费</li>
-                    <li>付费课程</li>
+                    <router-link tag="li" exact-active-class="activeClass" to="/">首页</router-link>
+                    <router-link tag="li" exact-active-class="activeClass" to="/class/free">免费课程</router-link>
+                    <router-link tag="li" exact-active-class="activeClass" to="/class/pay">付费课程</router-link>
+
                 </ul>
             </div>
             <div class="right">
@@ -22,7 +23,7 @@
                             placeholder="请输入想搜索的内容"
                             v-model="search" />
 
-                        <i class=" el-icon-search search-input-icon" ></i>
+                    <i class=" el-icon-search search-input-icon" ></i>
 
                 </div>
             </div>
@@ -31,13 +32,13 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      search: ''
+    export default {
+        data() {
+            return {
+                search: ''
+            }
+        }
     }
-  }
-}
 </script>
 
 <style lang="scss" scoped>
@@ -70,11 +71,12 @@ export default {
                     margin-left:10*$length;
                     width:60*$length;
                     @include fontStyle(16,72,500,$fontColor1,start)
+
                 }
                 & ul{
                     float:left;
                     margin-left:80*$length;
-                    width:400*$length;
+                    width:500*$length;
                     height:72*$length;
                     @extend %inlineBlockV;
                     & li{
@@ -86,10 +88,13 @@ export default {
                         vertical-align: middle;
                         @include fontStyle(14,30,500,#666,center);
 
+
                         &:hover{
                             border-bottom:1px solid $fontColor1;
-
                         }
+                    }
+                    .activeClass{
+                        border-bottom:1px solid $fontColor1;
                     }
                 }
 

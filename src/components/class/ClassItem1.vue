@@ -1,38 +1,44 @@
 <template>
-    <div class="class-item">
-        <div class="img-box">
-            <img src="https://img4.mukewang.com/szimg/5d1ad17f08cd16e800000000.jpg" alt="">
+    <router-link :to="detailPage">
+        <div class="class-item">
+            <div class="img-box">
+                <img src="https://img4.mukewang.com/szimg/5d1ad17f08cd16e800000000.jpg" alt="">
+            </div>
+            <div class="title">
+                三小时带你入门Django框架
+            </div>
+            <div class="class-info1">
+                <p class="type">实战</p>
+                <p class="level">初级</p>
+                <p class="star">
+                    <i class="star-on el-icon-star-on"></i>
+                    <i class="star-on el-icon-star-on"></i>
+                    <i class="star-on el-icon-star-on"></i>
+                    <i class="star-on el-icon-star-off"></i>
+                    <i class="star-on el-icon-star-off"></i>
+                </p>
+                <p class="view">124</p>
+                <i class="view-icon el-icon-user"></i>
+            </div>
+            <div class="class-info2" v-if="type==='pay'">
+                <p class="price">$123</p>
+                <p class="buy">加入购物车</p>
+                <i class="buy-icon el-icon-shopping-cart-2"></i>
+            </div>
         </div>
-        <div class="title">
-            三小时带你入门Django框架
-        </div>
-        <div class="class-info1">
-            <p class="type">实战</p>
-            <p class="level">初级</p>
-            <p class="star">
-                <i class="star-on el-icon-star-on"></i>
-                <i class="star-on el-icon-star-on"></i>
-                <i class="star-on el-icon-star-on"></i>
-                <i class="star-on el-icon-star-off"></i>
-                <i class="star-on el-icon-star-off"></i>
-            </p>
-            <p class="view">124</p>
-            <i class="view-icon el-icon-user"></i>
-        </div>
-        <div class="class-info2">
-            <p class="price">$123</p>
-            <p class="buy">加入购物车</p>
-            <i class="buy-icon el-icon-shopping-cart-2"></i>
-        </div>
-    </div>
+    </router-link>
 </template>
 
 <script>
-export default {
-  name: 'ClassItem1'
-
-
-}
+    export default {
+        name: 'ClassItem1',
+        props: ['type'],
+        data() {
+            return {
+                detailPage: this.type === 'pay' ? '/class-detail/pay/detail' : '/class-detail/free/detail'
+            }
+        }
+    }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -40,8 +46,9 @@ export default {
     @import '../../common/sass/base.scss';
     .class-item{
         width:224*$length;
-        height:240*$length;
+        // height:240*$length;
         cursor:pointer;
+        overflow: hidden;
         &:hover{
             .img-box{
                 & img{
@@ -51,7 +58,7 @@ export default {
             @include box-shadow(1px 1px 10px 1px $hoverColor1)
         }
         .img-box{
-           width:224*$length;
+            width:224*$length;
             height:126*$length;
             overflow: hidden;
             & img{
@@ -70,6 +77,7 @@ export default {
             margin:0 auto;
             height:18*$length;
             margin-top:10*$length;
+            margin-bottom:10*$length;
             @extend %clearFix;
 
             .type{
@@ -114,7 +122,7 @@ export default {
             width:95%;
             margin:0 auto;
             height:18*$length;
-            margin-top:10*$length;
+            margin-bottom:10*$length;
             @extend %clearFix;
             .price{
                 float:left;
@@ -124,7 +132,10 @@ export default {
             .buy{
                 cursor:pointer;
                 float:right;
-                @include fontStyle(12,18,500,#999,end)
+                @include fontStyle(12,18,500,#999,end);
+                &:hover{
+                    font-weight:900;
+                }
             }
             .buy-icon{
                 cursor:pointer;

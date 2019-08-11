@@ -5,7 +5,20 @@
   margin-bottom:0!important;
 }
 
+.page-container{
+  overflow: scroll;
+}
+
 .left-i{
   @include transform(rotate(180deg));
 }
+.el-progress__text{
+  font-size: 0;
+}
 
+.router-fade-enter-active, .router-fade-leave-active {
+  transition: opacity .2s;
+}
+.router-fade-enter, .router-fade-leave-active {
+  opacity: 0;
+}
