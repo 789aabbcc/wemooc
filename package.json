@@ -24,7 +24,8 @@
     "vue-router": "^3.0.2",
     "vue-video-player": "^5.0.2",
     "vueg": "^1.4.5",
-    "vuex": "^3.1.0"
+    "vuex": "^3.1.0",
+    "webpack": "^4.39.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",
